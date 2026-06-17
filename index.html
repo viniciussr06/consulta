@@ -151,10 +151,7 @@ button{
 
     <div class="cabecalho">
 
-        <img
-        src="LOGO_400px.png"
-        class="logo"
-        alt="Know How Automação">
+        <img src="LOGO_400px.png" class="logo" alt="Logo">
 
         <h2>Consulta de Consumo</h2>
 
@@ -189,11 +186,11 @@ button{
         <label>Consumo Total</label>
 
         <input
-        type="text"
-        id="resultado"
-        class="resultado"
-        readonly
-        placeholder="0 m³">
+            type="text"
+            id="resultado"
+            class="resultado"
+            readonly
+            placeholder="0 m³">
 
     </div>
 
@@ -203,11 +200,21 @@ button{
 
 function consultar(){
 
-    let valor=(Math.random()*1000).toFixed(2);
+    let dataInicial = document.getElementById("dataInicial").value;
+    let horaInicial = document.getElementById("horaInicial").value;
+    let dataFinal = document.getElementById("dataFinal").value;
+    let horaFinal = document.getElementById("horaFinal").value;
 
-    document.getElementById("resultado").value=
-    valor+" m³";
+    // validação
+    if(!dataInicial || !horaInicial || !dataFinal || !horaFinal){
+        alert("Preencha todos os campos antes de consultar.");
+        return;
+    }
 
+    let valor = (Math.random() * 1000).toFixed(2);
+
+    document.getElementById("resultado").value =
+        valor + " m³";
 }
 
 </script>
