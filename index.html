@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consulta de Consumo</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f0f2f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:450px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+.campo{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+    color:#555;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.resultado{
+    background:#f8f8f8;
+    font-size:20px;
+    font-weight:bold;
+    text-align:center;
+    color:#007bff;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    background:#007bff;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#005ec4;
+}
+
+@media(max-width:480px){
+
+.container{
+    padding:20px;
+}
+
+button{
+    font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Consulta de Consumo</h2>
+
+<div class="campo">
+<label>Data Inicial</label>
+<input type="date" id="dataInicial">
+</div>
+
+<div class="campo">
+<label>Hora Inicial</label>
+<input type="time" id="horaInicial">
+</div>
+
+<div class="campo">
+<label>Data Final</label>
+<input type="date" id="dataFinal">
+</div>
+
+<div class="campo">
+<label>Hora Final</label>
+<input type="time" id="horaFinal">
+</div>
+
+<button onclick="consultar()">
+Consultar
+</button>
+
+<div class="campo" style="margin-top:20px;">
+<label>Consumo Total</label>
+<input
+type="text"
+id="resultado"
+class="resultado"
+readonly
+placeholder="0 m³">
+</div>
+
+</div>
+
+<script>
+
+function consultar(){
+
+    let valor = (Math.random()*1000).toFixed(2);
+
+    document.getElementById("resultado").value =
+    valor + " m³";
+
+}
+
+</script>
+
+</body>
+</html>
